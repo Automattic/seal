@@ -92,6 +92,3 @@ DEPENDENCIES
   rspec
   slack-poster (~> 1.0.1)
   timecop
-
-BUNDLED WITH
-   1.10.6

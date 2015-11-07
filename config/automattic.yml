@@ -1,9 +1,5 @@
 calypso:
   members: []
-  use_labels: false
-  exclude_labels:
-    - '[Status] Awaiting fixes'
-    - '[Status] In progress'
-    - '[Status] Needs design review'
-    - '[Status] Punted'
-    - '[Status] Ready to merge'
+  use_labels: true
+  include_labels:
+    - '[Status] Awaiting Review'
