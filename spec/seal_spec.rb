@@ -18,6 +18,7 @@ describe Seal do
         'use_labels' => nil,
         'exclude_labels' => nil,
         'exclude_titles' => nil,
+        'ignore_seasonal_seals' => true
       }
     }
   end

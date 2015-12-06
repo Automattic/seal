@@ -2,9 +2,9 @@ require 'slack-poster'
 
 class SlackPoster
 
-  attr_accessor :webhook_url, :poster, :mood, :mood_hash, :channel, :season_name, :halloween_season, :festive_season
+  attr_accessor :webhook_url, :poster, :mood, :mood_hash, :channel, :season_name, :halloween_season, :festive_season, :ignore_seasonal_seals
 
-  def initialize(webhook_url, team_channel, mood)
+  def initialize(webhook_url, team_channel, mood, ignore_seasonal_seals = false)
     @webhook_url = webhook_url
     @team_channel = team_channel
     @mood = mood
@@ -49,6 +49,8 @@ class SlackPoster
   end
 
   def check_season
+    return '' if @ignore_seasonal_seals
+
     if halloween_season?
       @season_name = "Halloween "
     elsif festive_season?

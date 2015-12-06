@@ -3,3 +3,4 @@ calypso:
   use_labels: true
   include_labels:
     - '[Status] Awaiting Review'
+  ignore_seasonal_seals: true
