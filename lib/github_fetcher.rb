@@ -64,7 +64,7 @@ class GithubFetcher
   end
 
   def hidden?(pull_request, repo)
-    (include_labels && ! included_label?(pull_request, repo) ) || excluded_label?(pull_request, repo) || excluded_title?(pull_request.title) || !person_subscribed?(pull_request)
+    (include_labels && !included_label?(pull_request, repo) ) || excluded_label?(pull_request, repo) || excluded_title?(pull_request.title) || !person_subscribed?(pull_request)
   end
 
   def excluded_label?(pull_request, repo)
