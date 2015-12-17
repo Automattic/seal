@@ -29,10 +29,11 @@ class Seal
   end
 
   def bark_at(team)
+    config = team_config(team)
     message_builder = MessageBuilder.new(pull_requests(team))
     message = message_builder.build
     channel = ENV["SLACK_CHANNEL"] ? ENV["SLACK_CHANNEL"] : team_config(team)['channel']
-    ignore_seasonal_seals = team_config(team)['ignore_seasonal_seals'] ? team_config(team)['ignore_seasonal_seals'] : false
+    ignore_seasonal_seals = config && config['ignore_seasonal_seals'] ? config['ignore_seasonal_seals'] : false
     slack = SlackPoster.new(ENV['SLACK_WEBHOOK'], channel, message_builder.poster_mood, ignore_seasonal_seals)
     slack.send_request(message)
   end
