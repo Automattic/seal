@@ -1,4 +1,4 @@
-require 'slack-poster'
+require 'slack/poster'
 
 class SlackPoster
 
